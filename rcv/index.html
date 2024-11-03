@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahid HK Service Center</title>
+</head>
+<body>
+<div class="nav">
+    <blockquote>
+        <h1>
+            <i class="fa-solid fa-flask"></i>  Nahid HK Labs
+        </h1>
+    </blockquote>
+    <div class="btnbox">
+        <form id="serachdata">
+            <label for="">Search</label>
+            <input type="search" name="" id="" placeholder="Search The ID">
+            <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <button class="btn" onclick="window.history.back()">Go Back</button>
+    </div>
+</div>
+
+<br><br>
+<section class="apt">
+    <form action="/src/php/mysave.php" method="post">
+        <h2>Receved Entry</h2>
+        <label for="Cname">Customer name</label>
+        <input type="text" name="cname" placeholder="Customer name">
+        <label for="Cname">Customer Mobile</label>
+        <input type="number" name="cmobile" placeholder="Customer Mobile">
+        <label for="Cname">Customer Product</label>
+        <input type="text" name="cproduct" placeholder="Customer Product">
+        <label for="Cname">Receved Date</label>
+        <input type="date" name="rdate" placeholder="Receved Date">
+        <label for="Cname">Address</label>
+        <input type="address" name="address" placeholder="Address">
+        <center>
+        <button class="btn">Send </button>
+    </center>
+    </form>
+</section>
+    <!--javascript  -->
+    <script src="src/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
