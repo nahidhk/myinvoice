@@ -9,7 +9,7 @@ $bill = $_POST['bill'];
 $paid = $_POST['paid'];
 $less = $_POST['less'];
 $due = $_POST['due'];
-$sql = "UPDATE customers SET `type`='Delivered' , color = 'fca805' , cssd2 = 'none' , ddate=CURDATE() WHERE id = $id";
+$sql = "UPDATE customers SET `type`='Delivered' , color = 'ff2a00' , cssd2 = 'none' , ddate=CURDATE() WHERE id = $id";
 if ($conn->query($sql) === TRUE) {
     echo "<script>window.location.href='/'</script>";
 } else {
