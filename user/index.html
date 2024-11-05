@@ -25,20 +25,16 @@
 
 <br><br>
 <section class="apt">
-    <form action="/src/php/mysave.php" method="post">
-        <h2>Receved Entry</h2>
+    <form action="/src/php/usersave.php" method="post">
+        <h2>New User Entry</h2>
         <label for="Cname">Customer name</label>
         <input onchange="autofill()" id="username" list="users" type="text" name="cname" placeholder="Customer name">
         <label for="Cname">Customer Mobile</label>
         <input id="mb" type="number" name="cmobile" placeholder="Customer Mobile">
-        <label for="Cname">Customer Product</label>
-        <input type="text" name="cproduct" placeholder="Customer Product">
-        <label for="Cname">Receved Date</label>
-        <input type="date" name="rdate" placeholder="Receved Date">
         <label for="Cname">Address</label>
         <input id="ad" type="address" name="address" placeholder="Address">
         <center>
-        <button type="submit" class="btn">Send </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  type="reset">Clear</button>
+        <button class="btn">Save</button>
     </center>
     
 <datalist id="users">
