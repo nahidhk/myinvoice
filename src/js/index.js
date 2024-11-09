@@ -34,8 +34,8 @@ async function displayData(searchInput = "") {
     ${item.id}
     </td>
     <td>
-        <span class="n">Customere Name</span>: ${item.name}<br>
-        <span class="n">Customere phone</span>: ${item.phone}<br>
+        <span class="n">Customere Name</span>: ${item.name}<br><hr>
+        <span class="n">Customere phone</span>: ${item.phone}<br><hr>
         <span class="n">Customere Address</span>: ${item.address}
     </td>
     <td style=" text-align: center;
@@ -43,23 +43,22 @@ async function displayData(searchInput = "") {
     ${item.product}
     </td>
     <td>
-        <i class="n">Receved Date</i>: ${item.rdate}<br>
-        <i class="n">Conforim Date</i>: ${item.cdate}<br>
-        <i class="n">Delivered Date</i>: ${item.ddate}<br>
-
-    
+        <i class="n">Receved Date</i>: ${item.rdate}<br><hr>
+        <i class="n">Conforim Date</i>: ${item.cdate}<br><hr>
+        <i class="n">Delivered Date</i>: ${item.ddate}
     </td>
-    <td style="display: flex;">
+    <td>
+    <div  style="display: flex;">
         <div>
         <button onclick="window.location.href='/bill/?id=${item.id}'" class="btn"><i class="fa-solid fa-sack-dollar"></i></button>
        </div>
-       <div>
-        <span class="n">Total Bill</span>: ${item.bill}<br>
-        <span style="color:green"><b> <span class="n">Totall Paid</span>: ${item.paid}<br></b></span>
+       <div style='text-align: right;'>
+        <span class="n">Total Bill</span>: ${item.bill}<br><hr>
+        <span style="color:green"><b> <span class="n">Totall Paid</span>: ${item.paid}<br></b></span><hr>
         <span class="n">Less</span>: ${item.less}<br>
         <span class="n">Due</span>: ${item.due}<br>
        </div>
-      
+      </div>
     </td>
     <td>
         <div style="display: flex;">
@@ -100,4 +99,3 @@ async function displayData(searchInput = "") {
     searchData()
   }
   displayData();
-  

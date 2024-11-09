@@ -1,5 +1,20 @@
 <?php 
-$id = $_GET['id'];
+require_once('../config.php');
+if ( isset( $_GET[ 'id' ] ) ) {
+    $id = $_GET[ 'id' ];
+} 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM customers WHERE id = $id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc(); 
+} else {
+    echo "error";
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,13 +46,13 @@ $id = $_GET['id'];
     <form action="/src/php/cost.php/?id=<?php echo $id ?>" method="post">
         <h2>Save Billing Entry</h2>
         <label for="">Total Amount</label>
-        <input type="number" name="bill">
+        <input value="<?php echo $row['bill']?>" type="number" name="bill">
         <label for="">Paid</label>
-        <input type="number" name="paid">
+        <input value="<?php echo $row['paid']?>" type="number" name="paid">
         <label for="">Less</label>
-        <input type="number" name="less">
+        <input value="<?php echo $row['less']?>" type="number" name="less">
         <label for="">Due</label>
-        <input type="number" name="due">
+        <input value="<?php echo $row['due']?>" type="number" name="due">
         <center>
         <button class="btn">save</button>
     </center>

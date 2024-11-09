@@ -51,3 +51,11 @@ function mydata() {
 }
 
 displayData();
+  // Get today's date
+  let today = new Date();
+    
+  // Format the date as YYYY-MM-DD
+  let formattedDate = today.toISOString().split('T')[0];
+  
+  // Set the value of the input field to today's date
+  document.getElementById('rdate').value = formattedDate;

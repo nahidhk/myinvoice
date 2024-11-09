@@ -14,12 +14,13 @@ $recevedDate = $_POST['rdate'];
 $address = $_POST['address'];
 $deleveryeddate = "";
 $type = "pending";
-$less ="";
-$paidt ="";
-$due = "";
+$less ="00";
+$paidt ="00";
+$due = "00";
 $color = "fca605";
-$stmt = $conn->prepare("INSERT INTO customers ( `name`, `phone`, `product`, `rdate`, `ddate`, `type`, `address`, `less`, `paid`, `due`, `color`) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-$stmt->bind_param("sssssssssss", $name , $phone , $product, $recevedDate ,$deleveryeddate, $type ,$address , $less , $paidt , $due , $color );
+$bill = "00";
+$stmt = $conn->prepare("INSERT INTO customers ( `name`, `phone`, `product`, `rdate`, `ddate`, `type`, `address`, `less`, `paid`, `due`, `color`,`bill`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt->bind_param("ssssssssssss", $name , $phone , $product, $recevedDate ,$deleveryeddate, $type ,$address , $less , $paidt , $due , $color , $bill );
 if ($stmt->execute()) {
     echo "<script>window.location.href='/'</script>";
 } else {
