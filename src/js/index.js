@@ -34,9 +34,9 @@ async function displayData(searchInput = "") {
     ${item.id}
     </td>
     <td>
-        <span class="n">Customere Name</span>: ${item.name}<br><hr>
-        <span class="n">Customere phone</span>: ${item.phone}<br><hr>
-        <span class="n">Customere Address</span>: ${item.address}
+        <span class="n">&nbsp;&nbsp;<i class="fa-solid fa-user"></i>&nbsp; Name</span>: ${item.name}<br><hr>
+        <span class="n">&nbsp;&nbsp; <i class="fa-solid fa-phone-volume"></i>&nbsp; phone</span>: ${item.phone}<br><hr>
+        <span class="n">&nbsp;&nbsp;<i class="fa-solid fa-location-dot"></i>&nbsp; Address</span>: ${item.address}
     </td>
     <td style=" text-align: center;
   font-size: 18pt;">
@@ -66,6 +66,7 @@ async function displayData(searchInput = "") {
             <button style="background-color:#${item.color};" class="btn">${item.type}</button>
         </div>
         <div style="display:${item.cssd3} ;">
+        <button onclick="window.location.href='/src/php/drop.php?id=${item.id}'" style="background-color: red;" class="btn"><i class="fa-regular fa-trash-can"></i></button>
         <button onclick="window.location.href='/src/php/cln.php?id=${item.id}'" style="background-color: red;" class="btn"><i class="fa-solid fa-ban"></i></button>
         <button onclick="window.location.href='/src/php/ss.php?id=${item.id}'" style="background-color: rgb(13, 229, 24)" class="btn"><i class="fa-regular fa-circle-check"></i></button>
      
@@ -99,3 +100,15 @@ async function displayData(searchInput = "") {
     searchData()
   }
   displayData();
+
+  function mycalcatapp(){
+    const bill = document.getElementById("bill").value;
+    const paid = document.getElementById("paid").value;
+    const less = document.getElementById("less").value;
+    const due = document.getElementById("due").value;
+    if (bill) {
+      const alltaka = bill - paid - less;
+      document.getElementById('due').value=alltaka;
+      
+    }
+  }

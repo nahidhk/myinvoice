@@ -46,20 +46,20 @@ if ($result->num_rows > 0) {
     <form action="/src/php/cost.php/?id=<?php echo $id ?>" method="post">
         <h2>Save Billing Entry</h2>
         <label for="">Total Amount</label>
-        <input value="<?php echo $row['bill']?>" type="number" name="bill">
+        <input oninput="mycalcatapp()" value="<?php echo $row['bill']?>" type="number" name="bill" id="bill">
         <label for="">Paid</label>
-        <input value="<?php echo $row['paid']?>" type="number" name="paid">
+        <input oninput="mycalcatapp()" value="<?php echo $row['paid']?>" type="number" name="paid" id="paid">
         <label for="">Less</label>
-        <input value="<?php echo $row['less']?>" type="number" name="less">
+        <input oninput="mycalcatapp()" value="<?php echo $row['less']?>" type="number" name="less" id="less">
         <label for="">Due</label>
-        <input value="<?php echo $row['due']?>" type="number" name="due">
+        <input oninput="mycalcatapp()" value="<?php echo $row['due']?>" type="number" name="due" id="due">
         <center>
         <button class="btn">save</button>
     </center>
     </form>
 </section>
     <!--javascript  -->
-    <script src="src/js/index.js"></script>
+    <script src="/src/js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
