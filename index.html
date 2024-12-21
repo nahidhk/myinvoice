@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
@@ -8,46 +9,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nahid HK Service Center</title>
 </head>
+
 <body>
-<div class="nav">
-    <blockquote>
-        <h1>
-            <i class="fa-solid fa-flask"></i>   Nahid HK Labs
-        </h1>
-    </blockquote>
-    <div class="btnbox">
-        
-            <label for="">Search</label>
-            <input onclick="mydata()" type="search" name="" id="search" placeholder="Search The ID">
-            <button onclick="searchData()" class="btn"><i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-            <button onclick="window.location.href='/src/api/user.php'" class="btn">
-                <i class="fa-regular fa-address-card"></i>
-        </button>
-            <button onclick="window.location.href='/user'" class="btn"><i class="fa-solid fa-user-plus"></i></button>
-      
-        <button class="btn" onclick="rcvdata()">Received order</button>
+    <nav class="flex anaround">
+        <div class="nav flex anaround">
+            <blockquote>
+                <h1>
+                    <i class="fa-solid fa-flask"></i> Nahid HK Labs
+                </h1>
+            </blockquote>
+
+            <div style="padding: 10px;">
+                <label for="">Search</label>
+                <input onclick="mydata()" type="search" name="" id="search" placeholder="Search The ID">
+                <button onclick="searchData()" class="btn"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button onclick="window.location.href='/src/api/user.php'" class="btn">
+                    <i class="fa-regular fa-address-card"></i>
+                </button>
+                <button onclick="window.location.href='/user'" class="btn"><i
+                        class="fa-solid fa-user-plus"></i></button>
+
+                <button class="btn" onclick="rcvdata()">Received order</button>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br><br><br>
+
+    <div class="flex anaround">
+        <div class="flex anaround">
+            <div class="card card1">
+                <h1><i class="fa-solid fa-wallet"></i> Total Order</h1>
+                <h2 id="order"></h2>
+            </div>
+            <div class="card card2">
+                <h1><i class="fa-solid fa-money-bill-trend-up"></i> Total Cost</h1>
+                <h2 id="cost"></h2>
+            </div>
+            <div class="card card3">
+               <h1><i class="fa-solid fa-money-bill-wheat"></i> Total Due</h1>
+                <h2 id="due"></h2>
+            </div>
+            <div class="card card4">
+            <h1><i class="fa-solid fa-money-bills"></i> Total Received</h1>
+                <h2 id="received"></h2>
+            </div>
+        </div>
     </div>
-</div>
-<br><br><br><br><br><br>
-<blockquote>
-<table class="blueTable">
-    <thead>
-    <tr>
-    <th>ID NO.</th>
-    <th>Customers Info</th>
-    <th>Product</th>
-    <th>Date And Time</th>
-    <th>Billing and Cost</th>
-    <th>Type</th>
-    </tr>
-    </thead>
-    <tbody id="app">
-    </tbody>
-    </table>
-</blockquote>
+
+
+    <blockquote>
+        <table class="blueTable">
+            <thead>
+                <tr>
+                    <th>ID NO.</th>
+                    <th>Customers Info</th>
+                    <th>Product</th>
+                    <th>Date And Time</th>
+                    <th>Billing and Cost</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody id="app">
+            </tbody>
+        </table>
+    </blockquote>
     <!--javascript  -->
     <script src="src/js/index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+        integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>

@@ -1,116 +1,168 @@
-body{
-    font-size: 15pt;
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  font-size: 15pt;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.nav{
-    background-color: rgb(250, 250, 250);
-    height: 80px;
-    width: 100%;
-    position: fixed;
+
+.nav {
+  background-color: #ffffff8d;
+  position: fixed;
+  width: 90%;
+  z-index: 1000;
+  top: 30px;
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  box-shadow: 0 0 10px 0 #000;
 }
-.btnbox{
-    position: absolute;
-    top: 10px;
-    right: 700px;
-    display: flex;
+
+.apt {
+  background-color: #f8f4f4;
+  padding: 20px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  color: #fca605;
 }
-.apt{
-    background-color: #f8f4f4;
-    padding: 20px;
-    width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 10px;
-    color: #fca605;
+
+label {
+  margin: 10px;
 }
-label{
-    margin: 10px;
+
+.btn {
+  font-size: 15pt;
+  background-color: #4680ff;
+  color: #fff;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
 }
-.btn{
-    font-size: 15pt;
- background-color: #4680ff;
- color: #fff;
- height: 40px;
- padding: 8px;
- border: 1px solid #fff;
- border-radius: 4px;
- cursor: pointer;
- margin: 10px;
+
+input {
+  font-size: 12pt;
+  height: 35px;
+  width: 230px;
+  border: 1px solid #4680ff;
+  color: #000;
+  background-color: #ffffff00;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
 }
-input{
-    font-size: 12pt;
-    height: 35px;
-    width: 230px;
-    border: 1px solid #4680ff;
-    color: #000;
-    background-color: #ffffff00;
-    border-radius: 10px;
-    outline: none;
-    padding: 10px;
-    margin: 10px;
+
+input:focus {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
-input:focus{
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-}
+
 .btn:hover {
   opacity: .7;
 }
+
 table.blueTable {
-    border: 1px solid #1C6EA4;
-    background-color: #EEEEEE;
-    width: 100%;
-    text-align: left;
-    border-collapse: collapse;
-  }
-  table.blueTable td, table.blueTable th {
-    border: 2px solid #000000;
-    padding: 3px 2px;
-  }
-  table.blueTable tbody td {
-    font-size: 18px;
-  }
-  table.blueTable tr:nth-child(even) {
-    background: #ffffff;
-  }
-  table.blueTable thead {
-    background: #1C6EA4;
-    background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-    border-bottom: 2px solid #444444;
-  }
-  table.blueTable thead th {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFFFFF;
-    border-left: 2px solid #D0E4F5;
-  }
-  table.blueTable thead th:first-child {
-    border-left: none;
-  }
-  
-  
-  table.blueTable tfoot .links {
-    text-align: right;
-  }
-  table.blueTable tfoot .links a{
-    display: inline-block;
-    background: #1C6EA4;
-    color: #FFFFFF;
-    padding: 2px 8px;
-    border-radius: 5px;
-  }
-.n{
-  color: red;
- 
- 
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
 }
-h1{
+
+table.blueTable td,
+table.blueTable th {
+  border: 2px solid #000000;
+  padding: 3px 2px;
+}
+
+table.blueTable tbody td {
+  font-size: 18px;
+}
+
+table.blueTable tr:nth-child(even) {
+  background: #ffffff;
+}
+
+table.blueTable thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+
+table.blueTable thead th {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+
+table.blueTable tfoot .links {
+  text-align: right;
+}
+
+table.blueTable tfoot .links a {
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.n {
+  color: red;
+
+
+}
+
+h1 {
   margin: 0;
   color: #d900ff;
-  
+
+}
+
+.flex {
+  display: flex;
+  ;
+}
+
+.anaround {
+  justify-content: space-around;
+}
+
+.card{
+  height: 110px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: #f8f4f4;
+  padding: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin: 10px;
+  transition: all 0.3s;
+} 
+.card:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 4px 6px -1px, rgba(60, 64, 67, 0.15) 0px 2px 4px 0px;
+  transform: translateY(-5px);
+}
+.card > h1{
+  margin: 0;
+  color: #fca605;
+}
+.card > h2{
+  margin: 0;
+  color: #000000;
+}
+.card4{
+  width: 350px;
+  background-color: aquamarine;
 }

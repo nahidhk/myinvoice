@@ -1,34 +1,34 @@
-function rcvdata(){
-    window.location.href="/rcv"
+function rcvdata() {
+  window.location.href = "/rcv"
 }
-
+const apilink = "/src/api/api.php";
 async function displayData(searchInput = "") {
- 
-    try {
-      const response = await fetch("/src/api/api.php");
-      const data = await response.json();
-      const dataContainer = document.getElementById("app");
-      if (!dataContainer) {
-        throw new Error("Element with id 'app' not found.");
-      }
-  
-      dataContainer.innerHTML = "";
-  
-  
-      const filteredData = data.filter(
-        (item) =>
-          item.id.toLowerCase().includes(searchInput.toLowerCase()) ||
-          item.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-          item.phone.toLowerCase().includes(searchInput.toLowerCase()) ||
-          item.product.toLowerCase().includes(searchInput.toLowerCase()) 
-      );
-  
-   
-    
-      filteredData.forEach((item) => {
-        
-        const itemElement = document.createElement("tr");
-        itemElement.innerHTML = `
+
+  try {
+    const response = await fetch("/src/api/api.php");
+    const data = await response.json();
+    const dataContainer = document.getElementById("app");
+    if (!dataContainer) {
+      throw new Error("Element with id 'app' not found.");
+    }
+
+
+    dataContainer.innerHTML = "";
+
+
+    const filteredData = data.filter(
+      (item) =>
+        item.id.toLowerCase().includes(searchInput.toLowerCase()) ||
+        item.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+        item.phone.toLowerCase().includes(searchInput.toLowerCase()) ||
+        item.product.toLowerCase().includes(searchInput.toLowerCase())
+    );
+
+
+    filteredData.forEach((item) => {
+
+      const itemElement = document.createElement("tr");
+      itemElement.innerHTML = `
     <td style=" text-align: center;
   font-size: 35pt;">
     ${item.id}
@@ -81,34 +81,104 @@ async function displayData(searchInput = "") {
     </tr>
      
               `;
-  
-        dataContainer.appendChild(itemElement);
-      });
-    } catch (error) {
-      console.error("data error", error);
-    }
-  }
-  
 
-  function searchData() {
-    const searchInput1 = document.querySelector("#search").value;
-    displayData(searchInput1);
-    window.location.href ="#" + searchInput1 ;
+      dataContainer.appendChild(itemElement);
+    });
+  } catch (error) {
+    console.error("data error", error);
   }
-  function mydata(){
-    document.querySelector("#search").value="";
-    searchData()
-  }
-  displayData();
+}
 
-  function mycalcatapp(){
-    const bill = document.getElementById("bill").value;
-    const paid = document.getElementById("paid").value;
-    const less = document.getElementById("less").value;
-    const due = document.getElementById("due").value;
-    if (bill) {
-      const alltaka = bill - paid - less;
-      document.getElementById('due').value=alltaka;
-      
-    }
+
+function searchData() {
+  const searchInput1 = document.querySelector("#search").value;
+  displayData(searchInput1);
+  window.location.href = "#" + searchInput1;
+}
+function mydata() {
+  document.querySelector("#search").value = "";
+  searchData()
+}
+displayData();
+
+function mycalcatapp() {
+  const bill = document.getElementById("bill").value;
+  const paid = document.getElementById("paid").value;
+  const less = document.getElementById("less").value;
+  const due = document.getElementById("due").value;
+  if (bill) {
+    const alltaka = bill - paid - less;
+    document.getElementById('due').value = alltaka;
+
   }
+}
+
+
+
+function calculateTotalBill() {
+  fetch(apilink)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to load JSON file");
+      }
+      return response.json();
+    })
+    .then(data => {
+      const totalBill = data.reduce((sum, item) => {
+        const billValue = parseFloat(item.bill);
+        if (!isNaN(billValue)) {
+          return sum + billValue;
+        }
+        return sum;
+      }, 0);
+
+      const totalPaid = data.reduce((sum, item) => {
+        const paidValue = parseFloat(item.paid);
+        if (!isNaN(paidValue)) {
+          return sum + paidValue;
+        }
+        return sum;
+      }, 0);
+
+
+      const totalless = data.reduce((sum, item) => {
+        const paidValue = parseFloat(item.less);
+        if (!isNaN(paidValue)) {
+          return sum + paidValue;
+        }
+        return sum;
+      }, 0);
+
+      const totaldue = data.reduce((sum, item) => {
+        const paidValue = parseFloat(item.due);
+        if (!isNaN(paidValue)) {
+          return sum + paidValue;
+        }
+        return sum;
+      }, 0); 
+
+      const order = document.getElementById("order");
+      const cost = document.getElementById("cost");
+      const due = document.getElementById("due");
+      const receved = document.getElementById("received");
+
+
+      console.log("Total Invoice Bill:", totalBill);
+      console.log("Total Paid:", totalPaid);
+      console.log("Total less:", totalless);
+      console.log("Total Due:", totaldue);
+
+      order.innerHTML = new Intl.NumberFormat("en-Us").format(totalBill) + "/-";
+      cost.innerHTML = new Intl.NumberFormat("en-Us").format(totalless) + "/-";
+      due.innerHTML = new Intl.NumberFormat("en-Us").format(totaldue) + "/-";
+      receved.innerHTML = new Intl.NumberFormat("en-Us").format(totalPaid) + "/-";
+
+
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
+}
+
+calculateTotalBill();
+

@@ -7,21 +7,28 @@
     <title>Nahid HK Service Center</title>
 </head>
 <body>
-<div class="nav">
-    <blockquote>
-        <h1>
-            <i class="fa-solid fa-flask"></i>  Nahid HK Labs
-        </h1>
-    </blockquote>
-    <div class="btnbox">
-        <form id="serachdata">
-            <label for="">Search</label>
-            <input type="search" name="" id="" placeholder="Search The ID">
-            <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-        <button class="btn" onclick="window.history.back()">Go Back</button>
-    </div>
-</div>
+    <nav class="flex anaround">
+        <div class="nav flex anaround">
+            <blockquote>
+                <h1>
+                    <i class="fa-solid fa-flask"></i> Nahid HK Labs
+                </h1>
+            </blockquote>
+
+            <div style="padding: 10px;">
+                <label for="">Search</label>
+                <input onclick="mydata()" type="search" name="" id="search" placeholder="Search The ID">
+                <button onclick="searchData()" class="btn"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button onclick="window.location.href='/src/api/user.php'" class="btn">
+                    <i class="fa-regular fa-address-card"></i>
+                </button>
+                <button onclick="window.location.href='/rcv'" class="btn"><i class="fa-solid fa-receipt"></i></button>
+
+                <button class="btn" onclick="window.history.back()">Go Back</button>
+            </div>
+        </div>
+    </nav>
 
 <br><br>
 <section class="apt">
